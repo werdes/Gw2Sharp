@@ -179,7 +179,7 @@ For your convenience, the following list gives an overview of the web API endpoi
  /v2/worldbosses | 📄📚📦 | [`Gw2Client.WebApi.V2.WorldBosses`](../api/Gw2Sharp.WebApi.V2.Clients.WorldBossesClient.html)
  /v2/worlds | 🌐📄📚📦 | [`Gw2Client.WebApi.V2.Worlds`](../api/Gw2Sharp.WebApi.V2.Clients.WorldsClient.html)
  /v2/wvw/abilities | 🌐📄📚📦 | [`Gw2Client.WebApi.V2.Wvw.Abilities`](../api/Gw2Sharp.WebApi.V2.Clients.WvwAbilitiesClient.html)
- /v2/wvw/matches | ❌ |
+ /v2/wvw/matches | 📄📚📦 | [`Gw2Client.WebApi.V2.Wvw.Matches`](../api/Gw2Sharp.WebApi.V2.Clients.WvwMatchesClient.html)
  /v2/wvw/matches/overview | ❌ |
  /v2/wvw/matches/scores | ❌ |
  /v2/wvw/matches/stats | ❌ |

@@ -9,5 +9,10 @@ namespace Gw2Sharp.WebApi.V2.Clients
         /// Gets the WvW abilities.
         /// </summary>
         IWvwAbilitiesClient Abilities { get; }
+
+        /// <summary>
+        /// Gets the WvW matches.
+        /// </summary>
+        IWvwMatchesClient Matches { get; }
     }
 }

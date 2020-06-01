@@ -3,6 +3,7 @@
 ## 0.10.1
 ### Endpoints
 - Add `/v2/wvw/abilities`
+- Add `/v2/wvw/matches`
 
 ## 0.10.0
 ### Endpoints

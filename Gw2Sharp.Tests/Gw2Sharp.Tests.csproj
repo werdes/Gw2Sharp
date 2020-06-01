@@ -287,6 +287,9 @@
     <None Remove="TestFiles\Wvw\WvwAbilities.bulk.json" />
     <None Remove="TestFiles\Wvw\WvwAbilities.ids.json" />
     <None Remove="TestFiles\Wvw\WvwAbilities.single.json" />
+    <None Remove="TestFiles\Wvw\WvwMatches.bulk.json" />
+    <None Remove="TestFiles\Wvw\WvwMatches.ids.json" />
+    <None Remove="TestFiles\Wvw\WvwMatches.single.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -564,6 +567,9 @@
     <EmbeddedResource Include="TestFiles\Wvw\WvwAbilities.bulk.json" />
     <EmbeddedResource Include="TestFiles\Wvw\WvwAbilities.ids.json" />
     <EmbeddedResource Include="TestFiles\Wvw\WvwAbilities.single.json" />
+    <EmbeddedResource Include="TestFiles\Wvw\WvwMatches.bulk.json" />
+    <EmbeddedResource Include="TestFiles\Wvw\WvwMatches.ids.json" />
+    <EmbeddedResource Include="TestFiles\Wvw\WvwMatches.single.json" />
   </ItemGroup>
 
   <ItemGroup>

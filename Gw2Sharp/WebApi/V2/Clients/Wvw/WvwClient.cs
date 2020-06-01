@@ -9,6 +9,7 @@ namespace Gw2Sharp.WebApi.V2.Clients
     public class WvwClient : Gw2WebApiBaseClient, IWvwClient
     {
         private readonly IWvwAbilitiesClient abilities;
+        private readonly IWvwMatchesClient matches;
 
         /// <summary>
         /// Creates a new <see cref="WvwClient"/> that is used for the API v2 WvW endpoint.
@@ -20,9 +21,13 @@ namespace Gw2Sharp.WebApi.V2.Clients
             base(connection, gw2Client)
         {
             this.abilities = new WvwAbilitiesClient(connection, gw2Client);
+            this.matches = new WvwMatchesClient(connection, gw2Client);
         }
 
         /// <inheritdoc />
         public virtual IWvwAbilitiesClient Abilities => this.abilities;
+
+        /// <inheritdoc />
+        public virtual IWvwMatchesClient Matches => this.matches;
     }
 }
