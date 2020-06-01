@@ -1,0 +1,142 @@
+[
+  {
+    "id": 2,
+    "name": "Guard Killer",
+    "description": "Increases damage to enemy guards",
+    "icon": "https://render.guildwars2.com/file/C5E6E906927E2C6311036C11F1306CCF57CBF259/544537.png",
+    "ranks": [
+      {
+        "cost": 1,
+        "effect": "4% damage to guards"
+      },
+      {
+        "cost": 3,
+        "effect": "8% (total) damage to guards"
+      },
+      {
+        "cost": 6,
+        "effect": "12% (total) damage to guards"
+      },
+      {
+        "cost": 10,
+        "effect": "16% (total) damage to guards. All Guard Killer bonuses now also affect enemy lords and supervisors."
+      },
+      {
+        "cost": 15,
+        "effect": "20% (total) damage to guards, lords, and supervisors. Gain 50% of your endurance back after killing guards, lords, and supervisors."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Defense Against Guards",
+    "description": "Reduces the damage you take from enemy guards",
+    "icon": "https://render.guildwars2.com/file/0C450AE1344F410E08D0E4A851F0EFD77210D615/544541.png",
+    "ranks": [
+      {
+        "cost": 1,
+        "effect": "4% reduced damage from guards"
+      },
+      {
+        "cost": 3,
+        "effect": "8% reduced damage (total) from guards"
+      },
+      {
+        "cost": 6,
+        "effect": "12% reduced damage (total) from guards"
+      },
+      {
+        "cost": 10,
+        "effect": "16% reduced damage (total) from guards. All Defense Against Guards bonuses apply to lords and supervisors."
+      },
+      {
+        "cost": 15,
+        "effect": "20% reduced damage (total) from guards, lords, and supervisors. Gain retaliation for 10 seconds when you take damage from guards, lords, or supervisors. This effect triggers once every 20 seconds."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Mercenary's Bane",
+    "description": "Increases damage to and reduces damage from mercenaries",
+    "icon": "https://render.guildwars2.com/file/33E377E353512ACD4AB52F4DEFA41B58EF73A92D/544538.png",
+    "ranks": [
+      {
+        "cost": 1,
+        "effect": "4% increase to damage and defense against mercenaries"
+      },
+      {
+        "cost": 2,
+        "effect": "8% (total) increase to damage and defense against mercenaries"
+      },
+      {
+        "cost": 3,
+        "effect": "12% (total) increase to damage and defense against mercenaries"
+      },
+      {
+        "cost": 4,
+        "effect": "16% (total) increase to damage and defense against mercenaries"
+      },
+      {
+        "cost": 5,
+        "effect": "20% (total) increase to damage and defense against mercenaries"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Siege Bunker",
+    "description": "Reduces the siege damage you take",
+    "icon": "https://render.guildwars2.com/file/A1B55D6AC11CA15BB6D84E040D7841E741446E7F/544539.png",
+    "ranks": [
+      {
+        "cost": 1,
+        "effect": "2% increased siege defense"
+      },
+      {
+        "cost": 3,
+        "effect": "4% (total) increased siege defense"
+      },
+      {
+        "cost": 6,
+        "effect": "6% (total) increased siege defense"
+      },
+      {
+        "cost": 10,
+        "effect": "8% (total) increased siege defense"
+      },
+      {
+        "cost": 15,
+        "effect": "10% (total) increased siege defense"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Siege Might",
+    "description": "Increases damage done with siege-engine attacks",
+    "icon": "https://render.guildwars2.com/file/A45EE7F1D2C6DD654F1868EAFC5BFF400395CA40/544535.png",
+    "ranks": [
+      {
+        "cost": 1,
+        "effect": "2% increased siege damage"
+      },
+      {
+        "cost": 3,
+        "effect": "4% (total) increased siege damage"
+      },
+      {
+        "cost": 6,
+        "effect": "6% (total) increased siege damage"
+      },
+      {
+        "cost": 10,
+        "effect": "8% (total) increased siege damage"
+      },
+      {
+        "cost": 15,
+        "effect": "10% (total) increased siege damage"
+      }
+    ]
+  }
+]

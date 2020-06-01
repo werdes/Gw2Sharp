@@ -1,5 +1,9 @@
 # Gw2Sharp History
 
+## 0.10.1
+### Endpoints
+- Add `/v2/wvw/abilities`
+
 ## 0.10.0
 ### Endpoints
 - Add `/v2/skins`
