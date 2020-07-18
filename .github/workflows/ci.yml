@@ -32,7 +32,7 @@ jobs:
       - uses: actions/setup-dotnet@v1
         if: matrix.dotnet == 'net5.0'
         with:
-          dotnet-version: '5.0.0-preview.6'
+          dotnet-version: '5.0.100-preview.6.20318.15'
       - name: Run dotnet test
         run: dotnet test -c Release -f ${{ matrix.dotnet }}
 
@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.0-preview.6'
+          dotnet-version: '5.0.100-preview.6.20318.15'
       - name: Install InheritDocTool
         shell: powershell
         run: dotnet tool install --global InheritDocTool
