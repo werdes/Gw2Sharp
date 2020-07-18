@@ -20,6 +20,7 @@ jobs:
           - ubuntu-latest
           - windows-latest
         dotnet:
+          - net5.0
           - netcoreapp3.1
           - netcoreapp2.1
           - net461
@@ -28,6 +29,10 @@ jobs:
             dotnet: net461
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        if: matrix.dotnet == 'net5.0'
+        with:
+          dotnet-version: '5.0.0-preview.6'
       - name: Run dotnet test
         run: dotnet test -c Release -f ${{ matrix.dotnet }}
 
@@ -40,6 +45,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.0-preview.6'
       - name: Install InheritDocTool
         shell: powershell
         run: dotnet tool install --global InheritDocTool
