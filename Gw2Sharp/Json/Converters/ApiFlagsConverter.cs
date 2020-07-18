@@ -21,11 +21,11 @@ namespace Gw2Sharp.Json.Converters
             typeToConvert.IsGenericType && typeToConvert.GetGenericTypeDefinition() == typeof(ApiFlags<>) && typeToConvert.GetGenericArguments()[0].IsEnum;
 
         /// <inheritdoc />
-        public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
+        public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
         {
             var innerType = typeToConvert.GetGenericArguments()[0];
             var type = typeof(ApiFlagsConverterInner<>).MakeGenericType(innerType);
-            return (JsonConverter?)Activator.CreateInstance(type, BindingFlags.Instance | BindingFlags.Public, null, null, null);
+            return (JsonConverter)Activator.CreateInstance(type, BindingFlags.Instance | BindingFlags.Public, null, null, null)!;
         }
 
         private sealed class ApiFlagsConverterInner<T> : JsonConverter<ApiFlags<T>?>
@@ -49,7 +49,7 @@ namespace Gw2Sharp.Json.Converters
                     else if (reader.TokenType == JsonTokenType.String)
                     {
                         // If it's a string, create an enum with that value
-                        string rawValue = reader.GetString();
+                        string rawValue = reader.GetString()!;
                         fEnums.Add(new ApiEnum<T>(rawValue));
                     }
                     else if (reader.TokenType == JsonTokenType.Number)

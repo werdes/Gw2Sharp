@@ -13,7 +13,7 @@ namespace Gw2Sharp.Json.Converters
     {
         /// <inheritdoc />
         public override IApiV2Object Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-            JsonSerializer.Deserialize<ApiV2BaseObject>(ref reader, options);
+            JsonSerializer.Deserialize<ApiV2BaseObject>(ref reader, options)!;
 
         /// <inheritdoc />
         public override void Write(Utf8JsonWriter writer, IApiV2Object value, JsonSerializerOptions options) =>

@@ -36,7 +36,7 @@ namespace Gw2Sharp.WebApi.Middleware
 
             string[] idsList = Array.Empty<string>();
             if (context.Request.Options.EndpointQuery.TryGetValue(context.Request.Options.BulkQueryParameterIdsName, out string? ids))
-                idsList = ids.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                idsList = ids?.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
 
             if (idsList.Contains(ALL, StringComparer.OrdinalIgnoreCase))
                 return OnAllRequestAsync(context, callNext, cancellationToken);
@@ -120,7 +120,7 @@ namespace Gw2Sharp.WebApi.Middleware
             foreach (var item in doc.RootElement.EnumerateArray())
             {
                 if (item.TryGetProperty(bulkObjectPropertyIdName, out var id))
-                    items[id.ToString()] = new WebApiResponse(item.GetRawText(), response.StatusCode, response.ResponseHeaders);
+                    items[id.ToString()!] = new WebApiResponse(item.GetRawText(), response.StatusCode, response.ResponseHeaders);
             }
 
             return items;

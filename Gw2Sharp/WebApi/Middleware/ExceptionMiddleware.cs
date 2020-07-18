@@ -46,7 +46,7 @@ namespace Gw2Sharp.WebApi.Middleware
                 ErrorObject error;
                 try
                 {
-                    error = JsonSerializer.Deserialize<ErrorObject>(httpResponse.Content, deserializerOptions);
+                    error = JsonSerializer.Deserialize<ErrorObject>(httpResponse.Content, deserializerOptions)!;
                 }
                 catch (JsonException)
                 {

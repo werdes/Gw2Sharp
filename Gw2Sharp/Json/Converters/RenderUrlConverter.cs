@@ -24,7 +24,7 @@ namespace Gw2Sharp.Json.Converters
 
         /// <inheritdoc />
         public override RenderUrl Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
-            new RenderUrl(this.gw2Client, reader.GetString());
+            new RenderUrl(this.gw2Client, reader.GetString()!);
 
         /// <inheritdoc />
         public override void Write(Utf8JsonWriter writer, RenderUrl value, JsonSerializerOptions options) =>

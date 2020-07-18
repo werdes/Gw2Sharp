@@ -21,13 +21,13 @@ namespace Gw2Sharp.Json.Converters
             typeToConvert.GetGenericArguments()[0] == typeof(int);
 
         /// <inheritdoc />
-        public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
+        public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
         {
             var valueType = typeToConvert.GetGenericArguments()[1];
             var type = typeToConvert.GetGenericTypeDefinition() == typeof(IDictionary<,>)
                 ? typeof(DictionaryIntKeyConverterInner<>).MakeGenericType(valueType)
                 : typeof(DictionaryIntKeyConverterInnerReadOnly<>).MakeGenericType(valueType);
-            return (JsonConverter?)Activator.CreateInstance(type, BindingFlags.Instance | BindingFlags.Public, null, new object?[] { options }, null);
+            return (JsonConverter)Activator.CreateInstance(type, BindingFlags.Instance | BindingFlags.Public, null, new object?[] { options }, null)!;
         }
 
         private sealed class DictionaryIntKeyConverterInner<TValue> : JsonConverter<IDictionary<int, TValue>>
@@ -95,7 +95,7 @@ namespace Gw2Sharp.Json.Converters
                     value = JsonSerializer.Deserialize<TValue>(ref reader, options);
                 }
 
-                result.Add(key, value);
+                result.Add(key, value!);
             }
 
             throw new JsonException("Unexpected end of dictionary");

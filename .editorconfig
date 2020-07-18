@@ -367,6 +367,8 @@ dotnet_diagnostic.cs8655.severity=error
 dotnet_diagnostic.cs8667.severity=error
 # CS8714: The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'notnull' constraint.
 dotnet_diagnostic.cs8714.severity=error
+# CS8764: Nullability of return type doesn't match overridden member (possibly because of nullability attributes).
+dotnet_diagnostic.cs8764.severity=error
 # IDE0069: Disposable fields should be disposed
 dotnet_diagnostic.ide0069.severity=warning
 # S1117: Local variables should not shadow class fields

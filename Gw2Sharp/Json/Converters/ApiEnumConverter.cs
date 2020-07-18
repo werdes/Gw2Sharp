@@ -19,11 +19,11 @@ namespace Gw2Sharp.Json.Converters
             typeToConvert.IsGenericType && typeToConvert.GetGenericTypeDefinition() == typeof(ApiEnum<>) && typeToConvert.GetGenericArguments()[0].IsEnum;
 
         /// <inheritdoc />
-        public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
+        public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
         {
             var innerType = typeToConvert.GetGenericArguments()[0];
             var type = typeof(ApiEnumConverterInner<>).MakeGenericType(innerType);
-            return (JsonConverter?)Activator.CreateInstance(type, BindingFlags.Instance | BindingFlags.Public, null, null, null);
+            return (JsonConverter)Activator.CreateInstance(type, BindingFlags.Instance | BindingFlags.Public, null, null, null)!;
         }
 
         private sealed class ApiEnumConverterInner<T> : JsonConverter<ApiEnum<T>>
@@ -34,7 +34,7 @@ namespace Gw2Sharp.Json.Converters
                 switch (reader.TokenType)
                 {
                     case JsonTokenType.String:
-                        return new ApiEnum<T>(reader.GetString());
+                        return new ApiEnum<T>(reader.GetString()!);
                     case JsonTokenType.Number:
                         return new ApiEnum<T>(reader.GetUInt64());
                     default:

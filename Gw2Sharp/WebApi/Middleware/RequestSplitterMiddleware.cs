@@ -43,7 +43,7 @@ namespace Gw2Sharp.WebApi.Middleware
             {
                 string[] idsList = Array.Empty<string>();
                 if (context.Request.Options.EndpointQuery.TryGetValue(context.Request.Options.BulkQueryParameterIdsName, out string? ids))
-                    idsList = ids.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    idsList = ids?.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
 
                 if (idsList.Length <= this.MaxRequestSize)
                     return await callNext(context, cancellationToken).ConfigureAwait(false);

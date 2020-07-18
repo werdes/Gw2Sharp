@@ -16,7 +16,7 @@ namespace Gw2Sharp.Json.Converters
             if (reader.TokenType != JsonTokenType.String)
                 throw new JsonException("Expected a string");
 
-            string str = reader.GetString();
+            string? str = reader.GetString();
             if (string.IsNullOrWhiteSpace(str))
                 return null;
 

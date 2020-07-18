@@ -43,7 +43,7 @@ namespace Gw2Sharp.Tests.WebApi.V2.Models
             new object[] { "{\"Flags\":[null]}", new[] { new ApiEnum<TestEnum>(TestEnum.EnumValue3, null) } },
             new object[] { "{\"Flags\":[]}", new ApiEnum<TestEnum>[0] },
             new object[] { "{\"Flags\":null}", null },
-            new object[] { "{}", null },
+            new object[] { "{}", null }
         };
 #nullable enable
 
@@ -56,9 +56,9 @@ namespace Gw2Sharp.Tests.WebApi.V2.Models
             var obj = JsonSerializer.Deserialize<JsonObject>(json, options);
 
             if (expected == null)
-                Assert.Null(obj.Flags);
+                Assert.Null(obj?.Flags);
             else
-                Assert.Equal(expected, obj.Flags.List);
+                Assert.Equal(expected, obj?.Flags.List);
         }
 
         [Fact]
@@ -176,12 +176,10 @@ namespace Gw2Sharp.Tests.WebApi.V2.Models
         #region ArgumentNullException tests
 
         [Fact]
-        public void ArgumentNullConstructorTest()
-        {
+        public void ArgumentNullConstructorTest() =>
             AssertArguments.ThrowsWhenNull(
                 () => new ApiFlags<TestEnum>(new[] { new ApiEnum<TestEnum>(TestEnum.EnumValue1) }),
                 new[] { true });
-        }
 
         #endregion
     }

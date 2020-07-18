@@ -42,7 +42,6 @@ namespace Gw2Sharp.WebApi.Http
             options.Converters.Add(new ApiObjectListConverter());
             options.Converters.Add(new CastableTypeConverter());
             options.Converters.Add(new DictionaryIntKeyConverter());
-            options.Converters.Add(new GuidConverter());
             options.Converters.Add(new RenderUrlConverter(client));
             options.Converters.Add(new TimeSpanConverter());
             return options;
@@ -70,7 +69,7 @@ namespace Gw2Sharp.WebApi.Http
                 ? url.Query[1..]
                     .Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(x => x.Split('='))
-                    .ToDictionary(x => x[0], x => x.Skip(1).FirstOrDefault())
+                    .ToDictionary(x => x[0], x => x.Skip(1).FirstOrDefault() ?? string.Empty)
                 : new Dictionary<string, string>();
             requestHeaders = requestHeaders?.ShallowCopy() ?? new Dictionary<string, string>();
 
@@ -116,7 +115,7 @@ namespace Gw2Sharp.WebApi.Http
 
             // Deserialize response
             var obj = JsonSerializer.Deserialize<TResponse>(response.Content, deserializerSettings);
-            return new WebApiResponse<TResponse>(obj, response.StatusCode, response.ResponseHeaders);
+            return new WebApiResponse<TResponse>(obj!, response.StatusCode, response.ResponseHeaders);
         }
 
         private Func<MiddlewareContext, CancellationToken, Task<IWebApiResponse>> GenerateRequestCall()
